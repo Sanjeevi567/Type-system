@@ -1,24 +1,28 @@
+use either::{Left, Right};
+use std::{
+    any::Any,
+    collections::{hash_set::IntoIter, HashSet},
+    iter::once,
+};
 fn main() {
-    use either::{Left, Right};
-    use std::{
-        any::Any,
-        iter::{empty, once, Once},
-    };
-
-    let empty_or_once: Box<dyn Any> = if 3 < 2 {
-        Box::new(empty::<()>())
-    } else {
-        Box::new(once("Hello"))
-    };
-    if let Ok(once_str) = empty_or_once.downcast::<Once<&str>>() {
-        println!("{:?}", once_str);
+    let mut hashset = HashSet::new();
+    for i in 0..10 {
+        hashset.insert(i);
     }
-
-    let empty_or_once = if 1 < 2 {
-        Left(empty::<()>())
+    println!("{:?}", once_or_set(hashset.clone()).collect::<Vec<_>>());
+    println!("{:?}", set_or_once(hashset).downcast::<IntoIter<i32>>())
+}
+fn set_or_once(set: HashSet<i32>) -> Box<dyn Any> {
+    if 1 == 1 {
+        Box::new(set.into_iter())
     } else {
-        Right(once("Hello"))
-    };
-
-    println!("{:?}", empty_or_once);
+        Box::new(once(1))
+    }
+}
+fn once_or_set(set: HashSet<i32>) -> impl Iterator<Item = i32> {
+    if 1 == 1 {
+        Left(set.into_iter())
+    } else {
+        Right(once(1))
+    }
 }
