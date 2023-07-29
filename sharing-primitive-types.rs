@@ -23,8 +23,9 @@ fn main() {
         string.push_str("Some thread");
         hashmap.insert("Spawned", vec![45, 23]);
     });
+
+    //Reading concurrently
     spawn(|| {
-        string.push_str("Some other thread");
-        hashmap.insert("Other spawned", vec![51, 48]);
+        println!("String :{}\n HashMap: {:?}", string, hashmap);
     });
 }
