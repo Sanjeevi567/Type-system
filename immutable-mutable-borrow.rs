@@ -17,6 +17,7 @@ fn main(){
     //Invalidate the references of the old owner thus can't be after this assignment
     let new_owner = owner;
 
+    //without mut infront of variable we can't get mutable reference ,it's called inherent mutability
     let mut owner = true;
 
     //A type of &mut T
