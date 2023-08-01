@@ -3,6 +3,7 @@ catch all patter
 _ ignore single field
 .. ignore multiple remaining fields or variants after using required fields
 @
+variable length slice pattern 
 .. ranges inclusive
 | -Or is there and ,not pattern available
 Must match return type 
