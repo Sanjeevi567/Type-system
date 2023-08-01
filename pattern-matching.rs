@@ -2,13 +2,14 @@ Pattern matching chapter
 catch all patter 
 _ ignore single field
 .. ignore multiple remaining fields or variants after using required fields
-@
+Gurads: i.e code is executed on after checking condition of inner values.
+   @ if
 variable length slice pattern 
 .. ranges inclusive
 | -Or is there and ,not pattern available
 Must match return type 
 contain block of expression (calll function,refer local & capture environment if the scope is not inside of function
-if , * ,& ,ref ,ref mut ,  
+ , * ,& ,ref ,ref mut ,  
 let pattern = {} else{}
 if let 
 while let 
