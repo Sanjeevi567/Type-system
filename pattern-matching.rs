@@ -7,4 +7,14 @@ _ ignore single field
 | -Or is there and ,not pattern available
 Must match return type 
 contain block of expression (calll function,refer local & capture environment if the scope is not inside of function
-if , * ,& ,ref ,ref mut ,                             
+if , * ,& ,ref ,ref mut ,  
+let pattern = {} else{}
+if let 
+while let 
+Only irrefutable pattern can be valid i.e pattern that can't be fail.
+pattern destructing of 3 struct enum tuple array[x,y,z,..]:[i32;10]  in function parameter 
+                    in let declaration
+                    in for loop 
+other pattern matching supports both refutable and irrefutable patterns like Result , Option                    
+
+                            
