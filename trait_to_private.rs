@@ -13,5 +13,5 @@ mod new {
         fn cant_be_impl();
     }
     //Some of the internal types can implement
-    //this trait but outside can't
+    //this trait but outsider can't
 }
